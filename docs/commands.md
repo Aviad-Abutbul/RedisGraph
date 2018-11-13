@@ -423,10 +423,10 @@ This section contains information on all supported functions from the Cypher que
 
 ## Indexing
 RedisGraph supports single-property indexes for node labels.
-The creation syntax, to be provided as a GRAPH.QUERY command, is:
+The creation syntax is:
 
 ```sh
-CREATE INDEX ON :person(age)
+GRAPH.QUERY <GRAPHNAME> "CREATE INDEX ON :person(age)"
 ```
 
 After an index is explicitly created, it will automatically be used by queries that explicitly reference that label and property in a filter.
@@ -446,7 +446,7 @@ MATCH (:employer {name: 'Dunder Mifflin'})-[:employs]->(p:person) RETURN p"
 Individual indexes can be deleted using the matching syntax:
 
 ```sh
-DROP INDEX ON :person(age)
+GRAPH.QUERY <GRAPHNAME> "DROP INDEX ON :person(age)"
 ```
 
 ## GRAPH.DELETE
